@@ -1,15 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import Card from "react-bootstrap/Card";
+import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
-import {
-  addbookMarked,
-  toggleBookMarked,
-  removebookMarked,
-  isbookMarked,
-} from "../store/bookMarkedSlice";
+import Card from "react-bootstrap/Card";
 import { useDispatch, useSelector } from "react-redux";
-import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { addbookMarked, removebookMarked } from "../store/bookMarkedSlice";
 
 function MovieCard({ movie }) {
   const dispatch = useDispatch();
@@ -94,9 +88,11 @@ function MovieCard({ movie }) {
           style={{
             top: "1rem",
             right: "1rem",
+            width: "2.5rem",
+            height: "2.5rem",
           }}
           variant="secondary"
-          className={`position-absolute rounded-circle pt-3`}
+          className={`position-absolute rounded-lg d-flex justify-content-center align-items-center rounded-circle`}
         >
           <span className={`material-symbols-outlined ${checkClicked}`}>
             bookmark
